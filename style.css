@@ -1,0 +1,417 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #f9f9f9;
+  color: #222;
+  line-height: 1.6;
+  scroll-behavior: smooth;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* Dark Mode */
+body.dark-mode {
+  background: #121212;
+  color: #eee;
+}
+
+/* Header */
+header {
+  background: linear-gradient(135deg, #cb118a, #2575fc);
+  color: #fff;
+  text-align: center;
+  padding: 30px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+header h1 { font-size: 2.2rem; margin-bottom: 8px; }
+
+nav { margin-top: 10px; }
+nav a {
+  color: inherit;
+  margin: 0 15px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+nav a:hover { text-decoration: underline; }
+
+/* Typing effect (used in index.html) */
+.typing {
+  font-size: 1.2rem;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid #fff;
+  width: 0;
+  margin: auto;
+  animation: typing 4s steps(40, end) forwards, blink 0.8s infinite;
+}
+@keyframes typing { from { width: 0; } to { width: 35ch; } }
+@keyframes blink { 50% { border-color: transparent; } }
+
+/* Sections */
+section {
+  padding: 60px 20px;
+  max-width: 1100px;
+  margin: auto;
+}
+h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: #2575fc;
+  text-align: center;
+}
+
+/* Profile image */
+.profile-img {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  border: 5px solid #fff;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  margin: 20px auto;
+  display: block;
+  animation: float 3s ease-in-out infinite;
+}
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+  100% { transform: translateY(0); }
+}
+
+/* Cards */
+.card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 20px;
+}
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.2);
+}
+
+/* Buttons */
+.resume-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 25px;
+  background: #2575fc;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+.resume-btn:hover {
+  background: #6a11cb;
+  transform: scale(1.08);
+}
+
+/* Contact links */
+.contact-links {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 30px;
+}
+.contact-links a {
+  width: 55px;
+  height: 55px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  color: #fff;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+.contact-links a:hover {
+  background: #fff;
+  color: #333;
+  transform: scale(1.1);
+}
+
+/* Contact Form */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 20px;
+}
+form input, form textarea {
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  font-size: 1rem;
+}
+form input::placeholder, form textarea::placeholder {
+  color: #ccc;
+}
+form button { align-self: center; }
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #333;
+  color: #fff;
+  margin-top: auto;
+  font-size: 0.9rem;
+}
+
+html, body {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1; /* pushes footer down */
+}
+
+footer {
+  margin-top: auto;
+}
+
+/* Dark Mode overrides */
+body.dark-mode header {
+  background: linear-gradient(135deg, #f075bb, #616263);
+}
+body.dark-mode .card,
+body.dark-mode .project-card,
+body.dark-mode .skill-card {
+  background: #1e1e1e;
+  color: #eee;
+}
+body.dark-mode .resume-btn {
+  background: #444;
+  color: #fff;
+}
+body.dark-mode .resume-btn:hover {
+  background: #ffcc00;
+  color: #000;
+}
+
+/* Dark Mode footer */
+body.dark-mode footer {
+  background: #000;
+  color: #aaa;
+}
+
+/* Skills Section */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  margin-top: 20px;
+}
+.skill-card {
+  background: #fff;
+  padding: 25px;
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.skill-card i {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: #2575fc;
+}
+.skill-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0,0,0,0.2);
+}
+
+/* Highlighted Skill Badges */
+.highlight-skill {
+  display: inline-block;
+  background: linear-gradient(135deg, #ff512f, #dd2476);
+  color: #fff;
+  padding: 6px 14px;
+  margin: 5px;
+  border-radius: 20px;
+  font-size: 0.95rem;
+  font-weight: bold;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.highlight-skill:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+  cursor: default;
+}
+
+/* Projects Grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+  margin: 20px;
+}
+.project-card {
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
+  background: #fff;
+}
+.project-card:hover { transform: scale(1.05); }
+.project-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+.project-info {
+  padding: 15px;
+  text-align: center;
+}
+.project-info h3 {
+  margin-bottom: 10px;
+  color: inherit;
+}
+.project-info p {
+  font-size: 0.95rem;
+  line-height: 1.4;
+  color: inherit;
+}
+
+/* Dark Mode Toggle Button */
+.dark-toggle {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+.dark-toggle:hover { transform: scale(1.2); }
+
+
+/* ================= Contact Section ================= */
+
+/* Contact Links (Icons) */
+.contact-links {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  padding: 30px;
+  flex-wrap: wrap;
+}
+
+.contact-links a {
+  width: 60px;
+  height: 60px;
+  border: 2px solid currentColor;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  color: inherit; /* adapts to light/dark */
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.contact-links a:hover {
+  background: currentColor;
+  color: #fff; /* makes icon stand out */
+  transform: scale(1.15);
+}
+
+/* Contact Form */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 25px;
+}
+
+form input,
+form textarea {
+  padding: 12px 15px;
+  border-radius: 8px;
+  font-size: 1rem;
+  outline: none;
+  transition: border 0.3s ease, background 0.3s ease, color 0.3s ease;
+  border: 1px solid #ccc;
+}
+
+/* Light Mode Inputs */
+body:not(.dark-mode) form input,
+body:not(.dark-mode) form textarea {
+  background: #fff;
+  color: #222;
+  border: 1px solid #bbb;
+}
+
+/* Dark Mode Inputs */
+body.dark-mode form input,
+body.dark-mode form textarea {
+  background: #1e1e1e;
+  color: #eee;
+  border: 1px solid #555;
+}
+
+/* Placeholders */
+form input::placeholder,
+form textarea::placeholder {
+  color: #888;
+}
+body.dark-mode form input::placeholder,
+body.dark-mode form textarea::placeholder {
+  color: #aaa;
+}
+
+/* Submit Button */
+.resume-btn {
+  align-self: center;
+  padding: 12px 25px;
+  border-radius: 30px;
+  background: #2575fc;
+  color: #fff;
+  font-weight: bold;
+  font-size: 1rem;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+.resume-btn:hover {
+  background: #6a11cb;
+  transform: translateY(-2px);
+}
+
+/* Dark Mode Button */
+body.dark-mode .resume-btn {
+  background: #444;
+}
+body.dark-mode .resume-btn:hover {
+  background: #ffcc00;
+  color: #000;
+}
+
+/* Success Message */
+#successMsg {
+  text-align: center;
+  margin-top: 10px;
+  font-weight: bold;
+  font-size: 1rem;
+}

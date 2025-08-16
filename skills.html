@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Skills | Yoganandhini S</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <header>
+    <h1>My Skills</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="skills.html" class="active">Skills</a>
+      <a href="projects.html">Projects</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <button class="dark-toggle" onclick="toggleDarkMode()">🌙</button>
+  </header>
+
+  <main>
+    <section>
+      <h2>💻 Technical Skills</h2>
+      <div class="skills-grid">
+        <div class="skill-card">
+          <i class="fas fa-code"></i>
+          <h3>Programming Languages</h3>
+          <div class="skill-badges">
+            <span class="highlight-skill">Java</span>
+            <span class="highlight-skill">Python</span>
+          </div>
+        </div>
+        <div class="skill-card">
+          <i class="fas fa-laptop-code"></i>
+          <h3>Web Development</h3>
+          <div class="skill-badges">
+            <span class="highlight-skill">HTML</span>
+            <span class="highlight-skill">CSS</span>
+            <span class="highlight-skill">JavaScript</span>
+          </div>
+        </div>
+        <div class="skill-card">
+          <i class="fas fa-database"></i>
+          <h3>Database</h3>
+          <div class="skill-badges">
+            <span class="highlight-skill">MySQL</span>
+          </div>
+        </div>
+        <div class="skill-card">
+          <i class="fas fa-tools"></i>
+          <h3>Developer Tools</h3>
+          <div class="skill-badges">
+            <span class="highlight-skill">VS Code</span>
+            <span class="highlight-skill">IntelliJ</span>
+            <span class="highlight-skill">Eclipse</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>🤝 Soft Skills</h2>
+      <div class="skills-grid">
+        <div class="skill-card">
+          <i class="fas fa-users"></i>
+          <h3>Teamwork</h3>
+          <div class="skill-badges">
+            <span class="highlight-skill">Collaboration</span>
+          </div>
+        </div>
+        <div class="skill-card">
+          <i class="fas fa-comments"></i>
+          <h3>Communication</h3>
+          <div class="skill-badges">
+            <span class="highlight-skill">Verbal</span>
+            <span class="highlight-skill">Written</span>
+          </div>
+        </div>
+        <div class="skill-card">
+          <i class="fas fa-lightbulb"></i>
+          <h3>Problem-solving</h3>
+          <div class="skill-badges">
+            <span class="highlight-skill">Critical Thinking</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Yoganandhini S | All Rights Reserved</p>
+  </footer>
+
+  <script>
+    function toggleDarkMode() {
+      document.body.classList.toggle("dark-mode");
+      if (document.body.classList.contains("dark-mode")) {
+        localStorage.setItem("theme", "dark");
+      } else {
+        localStorage.setItem("theme", "light");
+      }
+    }
+    window.onload = () => {
+      if (localStorage.getItem("theme") === "dark") {
+        document.body.classList.add("dark-mode");
+      }
+    };
+  </script>
+</body>
+</html>
